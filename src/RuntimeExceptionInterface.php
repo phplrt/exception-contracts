@@ -9,19 +9,23 @@
 
 declare(strict_types=1);
 
-namespace Phplrt\Contracts\Lexer\Exception;
+namespace Phplrt\Contracts\Exception;
 
 use Phplrt\Contracts\Lexer\TokenInterface;
+use Phplrt\Contracts\Source\ReadableInterface;
 
 /**
- * Throws when the error of the lexical analysis of the source code happens.
+ * Interface RuntimeExceptionInterface
  */
-interface LexerRuntimeExceptionInterface extends LexerExceptionInterface
+interface RuntimeExceptionInterface extends \Throwable
 {
     /**
-     * Returns a token object during which processing errors occurred.
-     *
      * @return TokenInterface
      */
     public function getToken(): TokenInterface;
+
+    /**
+     * @return ReadableInterface
+     */
+    public function getSource(): ReadableInterface;
 }
