@@ -20,7 +20,6 @@ class CompatibilityTest extends TestCase
 
         new class () extends \Exception implements RuntimeExceptionInterface {
             public function getToken(): TokenInterface {}
-
             public function getSource(): ReadableInterface {}
         };
     }
